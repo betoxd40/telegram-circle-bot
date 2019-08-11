@@ -12,7 +12,7 @@ router.post('/', async (req, res) => {
     try {
         //TelegramBot.sendCircleMessage(devOpsChatId, {reponame, branch, build_url})
         return res.status(200).json({
-            data: req.body.data.payload, 
+            data: req.body.data, 
         });
     } catch (e) {
         return res.status(400).json({
