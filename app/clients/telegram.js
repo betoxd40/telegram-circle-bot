@@ -21,9 +21,11 @@ const sendCircleMessage = (chatId, circleObject) =>
     botTelegram.sendMessage(
         chatId,
         `A job has been completed: ${circleObject.reponame}.
+        Repo URL: ${circleObject.repourl}.
+        Username: ${circleObject.username}.
         Branch: ${circleObject.branch}.
-        URL: ${circleObject.build_url}.
-        Status: Succeed
+        Status: ${circleObject.status}.
+        Circle URL: ${circleObject.build_url}.
         `
     );
 
