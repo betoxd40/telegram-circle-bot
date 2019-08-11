@@ -9,12 +9,14 @@ router.get('/', async (req, res) => {
 });
 
 router.post('/', async (req, res) => {
+    const { reponame, branch, build_url} = req.body.payload;
     try {
-        //TelegramBot.sendCircleMessage(devOpsChatId, {reponame, branch, build_url})
+        TelegramBot.sendCircleMessage(devOpsChatId, {reponame, branch, build_url})
         return res.status(200).json({
-            data: req.body.data, 
+            data: req.body, 
         });
     } catch (e) {
+        //FIXME: Improve the error handler
         return res.status(400).json({
             error: e,
         });
