@@ -1,6 +1,5 @@
 const Telegraf = require('telegraf')
 const Telegram = require('telegraf/telegram')
-const devOpsChatId = '-351202985';
 
 let botTelegraf = null;
 let botTelegram = null;
@@ -20,7 +19,7 @@ const listen = () => {
     })
 }
 
-const sendCircleMessage = (chatId, circleObject) => {
+const sendCircleMessage = (chatId, circleObject) =>
     botTelegram.sendMessage(
         chatId,
         `A job has been completed: ${circleObject.reponame}.
@@ -29,6 +28,5 @@ const sendCircleMessage = (chatId, circleObject) => {
         Status: Succeed
         `
     );
-}
 
 module.exports = {init, listen , sendCircleMessage};
