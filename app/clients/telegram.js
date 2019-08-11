@@ -11,8 +11,6 @@ const init = token => {
 }
 
 const listen = () => {
-    botTelegraf.hears('hi', (ctx) => ctx.reply('Hey there'))
-    botTelegraf.command('oldschool', (ctx) => ctx.reply('Hello'));
     botTelegraf.on(['sticker', 'photo', 'group_chat_created', 'channel_chat_created'], (ctx) => {
         console.log(ctx)
         return ctx.reply('Cool!')

@@ -9,6 +9,7 @@ router.get('/', async (req, res) => {
 });
 
 router.post('/', async (req, res) => {
+    console.log(req.body)
     const { reponame, branch, build_url} = req.body.data.payload;
     try {
         TelegramBot.sendCircleMessage(devOpsChatId, {reponame, branch, build_url})
