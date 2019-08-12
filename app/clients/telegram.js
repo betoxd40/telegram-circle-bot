@@ -24,7 +24,7 @@ const sendCircleMessage = (chatId, circleObject) =>
         Repo URL: ${circleObject.repourl}.
         Username: ${circleObject.username}.
         Branch: ${circleObject.branch}.
-        Status: ${circleObject.status} ✔.
+        Status: ${circleObject.status} ${circleObject.status === 'succeed' ? '✅' : '❌'}.
         Circle URL: ${circleObject.build_url}.
         `
     );
